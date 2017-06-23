@@ -13,6 +13,7 @@ RUN apk add --no-cache \
     && apk del py-pip
 
 COPY --from=0 /usr/local/bin/wrapdocker /usr/local/bin/wrapdocker
+COPY dmsetup /usr/bin/dmsetup
 
 ENV LOG=file
 ENTRYPOINT ["wrapdocker"]
