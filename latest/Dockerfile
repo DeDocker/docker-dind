@@ -9,7 +9,6 @@ RUN apk add --no-cache \
         iptables \
         ca-certificates \
         e2fsprogs \
-        git \
     && pip install docker-compose \
     && apk del py-pip
 
