@@ -1,0 +1,21 @@
+FROM jpetazzo/dind
+
+FROM docker:dind
+
+RUN apk add --no-cache \
+        python2 \
+        py-pip \
+        bash \
+        iptables \
+        ca-certificates \
+        e2fsprogs \
+        git \
+    && pip install docker-compose \
+    && apk del py-pip
+
+COPY --from=0 /usr/local/bin/wrapdocker /usr/local/bin/wrapdocker
+COPY dmsetup /usr/bin/dmsetup
+
+ENV LOG=file
+ENTRYPOINT ["wrapdocker"]
+CMD []
