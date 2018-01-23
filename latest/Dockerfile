@@ -12,6 +12,11 @@ RUN apk add --no-cache \
     && pip install docker-compose \
     && apk del py-pip
 
+COPY install /install/
+RUN /install/torus-cli
+
+COPY bin /usr/bin/
+
 COPY --from=0 /usr/local/bin/wrapdocker /usr/local/bin/wrapdocker
 COPY dmsetup /usr/bin/dmsetup
 
