@@ -13,7 +13,9 @@ RUN apk add --no-cache \
     && apk del py-pip
 
 COPY install /install/
-RUN /install/torus-cli
+RUN /install/torus-cli \
+    && torus prefs set core.hints false \
+    && torus prefs set core.progress false
 
 COPY bin /usr/bin/
 
