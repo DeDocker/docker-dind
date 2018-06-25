@@ -22,6 +22,9 @@ COPY bin /usr/bin/
 COPY --from=0 /usr/local/bin/wrapdocker /usr/local/bin/wrapdocker
 COPY dmsetup /usr/bin/dmsetup
 
+RUN echo "@next http://dl-cdn.alpinelinux.org/alpine/v3.8/main" >> /etc/apk/repositories \
+    && apk add --no-cache coreutils@next
+
 ENV LOG=file
 ENTRYPOINT ["wrapdocker"]
 CMD []
