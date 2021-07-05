@@ -3,7 +3,7 @@ FROM docker:dind
 RUN apk update
 RUN apk add docker-compose git bash curl
 
-COPY root/ /root/
+COPY bin/m /usr/bin/m
 RUN mkdir -p /usr/src/app/
 
 ENV LOG=file
