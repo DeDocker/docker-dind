@@ -41,7 +41,7 @@ wait_for()
             echoerr "$URI is alive after $((WAIT_END_TS - WAIT_START_TS)) seconds"
             break
         fi
-        sleep 1
+        sleep 5
     done
     return $OUTCOME
 }
