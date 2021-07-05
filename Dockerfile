@@ -1,13 +1,11 @@
 FROM docker:dind
 
-RUN apk add docker-compose git
-
-RUN apk add bash curl && (curl -o- https://raw.githubusercontent.com/manifoldco/manifold-cli/master/install.sh | sh)
+RUN apk update
+RUN apk add docker-compose git bash curl
 
 COPY root/ /root/
 RUN mkdir -p /usr/src/app/
 
-ENV PATH="${PATH}:/root/.manifold/bin"
 ENV LOG=file
 
 ENTRYPOINT ["docker-entrypoint.sh"]

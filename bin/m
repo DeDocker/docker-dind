@@ -3,4 +3,4 @@
 
 set -eu
 
-manifold run $@
+#manifold run $@
