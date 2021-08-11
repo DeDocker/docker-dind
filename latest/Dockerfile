@@ -5,6 +5,7 @@ RUN apk add docker-compose git bash curl
 
 COPY bin/m /usr/bin/m
 COPY bin/waitforurl /usr/bin/waitforurl
+COPY bin/envfileparse /usr/bin/envfileparse
 RUN mkdir -p /usr/src/app/
 
 ENV LOG=file
