@@ -1,7 +1,7 @@
 FROM docker:dind
 
 RUN apk update
-RUN apk add docker-compose git bash curl
+RUN apk add docker-compose git bash curl ncurser
 
 COPY bin/m /usr/bin/m
 COPY bin/waitforurl /usr/bin/waitforurl
