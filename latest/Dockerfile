@@ -1,7 +1,8 @@
 FROM docker:dind
 
 RUN apk update
-RUN apk add docker-compose git bash curl ncurser
+RUN apk add docker-compose git bash curl ncurses
+RUN apk cache clean; rm -rf /var/cache/apk/*
 
 COPY bin/m /usr/bin/m
 COPY bin/waitforurl /usr/bin/waitforurl
