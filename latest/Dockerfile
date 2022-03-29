@@ -1,7 +1,7 @@
 FROM docker:dind
 
 RUN apk update
-RUN apk add docker-compose git bash curl ncurses
+RUN apk add docker-compose git bash curl ncurses net-tools jq
 RUN apk cache clean; rm -rf /var/cache/apk/*
 
 COPY bin/m /usr/bin/m
